@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark"><title>News Browser</title>
+  <link rel="stylesheet" href="styles.css"><script type="module" src="popup.js"></script>
+</head>
+<body class="popup-page">
+  <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M6 4h12v17l-6-4-6 4z"/></symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="3"/><circle cx="15" cy="17" r="3"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5M6.3 7a7 7 0 0 1 11.5-1L20 9M4 15l2.2 3A7 7 0 0 0 17.7 17"/></symbol>
+    <symbol id="i-expand" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M10 4H4v16h16v-6"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m8 4 8 8-8 8"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/></symbol>
+  </defs></svg>
+  <section id="welcome" class="welcome" hidden aria-labelledby="welcome-title">
+    <div class="wordmark"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>NEWS BROWSER</div>
+    <div class="welcome-art" aria-hidden="true"><span class="orbit orbit-one"></span><span class="orbit orbit-two"></span><svg><use href="#i-globe"/></svg><span class="art-dot"></span></div>
+    <p class="eyebrow">LESS NOISE. MORE PERSPECTIVE.</p>
+    <h1 id="welcome-title">A clearer view<br>of your world.</h1>
+    <p class="welcome-copy">Recent news from familiar sources, with a little more context about why it matters.</p>
+    <div class="welcome-values"><span>Local &amp; global</span><span>Always free</span><span>No account</span></div>
+    <button id="start-setup" class="button primary wide">Set up your brief <span aria-hidden="true">→</span></button>
+    <p class="fine-print">Choose your location and sources.<br>Local feeds use your chosen city and country.</p>
+  </section>
+  <div id="reader" class="reader" hidden>
+    <header class="app-header">
+      <div class="brand-row">
+        <div class="wordmark"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>NEWS BROWSER</div>
+        <div class="header-actions">
+          <button id="saved-view" class="icon-button" aria-label="Saved stories" title="Saved stories" aria-pressed="false"><svg><use href="#i-bookmark"/></svg></button>
+          <button id="open-settings" class="icon-button" aria-label="Settings and sources" title="Settings and sources"><svg><use href="#i-settings"/></svg></button>
+          <button id="expand-view" class="icon-button" aria-label="Open expanded news view" title="Open expanded news view"><svg><use href="#i-expand"/></svg></button>
+        </div>
+      </div>
+      <div class="edition-row"><span id="today"></span><button id="location" class="text-button location-button"><svg><use href="#i-globe"/></svg><span>World edition</span><span aria-hidden="true">⌄</span></button></div>
+      <nav class="view-tabs" aria-label="News views"><button data-view="top" aria-current="page">Top</button><button data-view="latest">Latest</button><button data-view="local">Local</button><button data-view="world">World</button></nav>
+    </header>
+    <main id="news-scroll" class="news-scroll" tabindex="-1">
+      <div class="brief-heading"><div><p id="view-kicker" class="eyebrow">YOUR DAILY PERSPECTIVE</p><h1 id="view-title">The stories that matter.</h1></div><button id="toggle-search" class="icon-button" aria-label="Search stories" aria-expanded="false" aria-controls="search-panel"><svg><use href="#i-search"/></svg></button></div>
+      <div class="filter-row"><p id="view-description">Recent events, ranked by newsworthiness.</p><label class="topic-label"><span class="sr-only">Filter by topic</span><select id="topic-filter"></select></label></div>
+      <div id="search-panel" class="search-panel" hidden><label for="story-search" class="sr-only">Search headlines, descriptions and sources</label><input id="story-search" type="search" placeholder="Search this brief…" autocomplete="off" maxlength="120"></div>
+      <details id="channel-shortcuts" class="channel-shortcuts" hidden><summary>Your X channels <span id="x-channel-count"></span></summary><div id="x-channel-links" class="chip-row"></div><p class="fine-print">Opens profiles on X. Posts aren't imported into this brief.</p></details>
+      <div id="trending" class="trending" hidden><span class="eyebrow">GAINING COVERAGE</span><div id="trend-chips" class="chip-row"></div><p class="fine-print">Across your feeds, compared with the previous two hours.</p></div>
+      <div id="coverage-note" class="coverage-note" hidden></div>
+      <button id="new-stories" class="new-stories" hidden></button>
+      <div id="stories" class="stories" aria-label="News stories"></div>
+      <button id="load-more" class="button secondary load-more" hidden>Show more stories</button>
+      <div id="end-note" class="end-note" hidden><span class="end-rule"></span><p>You're caught up with this brief.</p><span>Make room for the rest of your day.</span></div>
+    </main>
+    <footer class="app-footer"><div class="footer-status"><span id="status-dot" class="status-dot"></span><span id="check-status">Not checked yet</span><button id="source-health" class="text-button"></button></div><button id="refresh" class="icon-button" aria-label="Refresh news" title="Refresh news"><svg><use href="#i-refresh"/></svg></button></footer>
+  </div>
+  <div id="toast" class="toast" role="status" hidden><span id="toast-message"></span><button id="toast-action" hidden>Undo</button></div>
+  <p id="announcer" class="sr-only" aria-live="polite" aria-atomic="true"></p>
+  <template id="story-template">
+    <article class="story-card">
+      <div class="story-top"><div class="story-meta"><span class="source-monogram" aria-hidden="true"></span><span class="source-name"></span><span aria-hidden="true">·</span><time></time></div><button class="save-story icon-button" aria-label="Save story" title="Save story" aria-pressed="false"><svg><use href="#i-bookmark"/></svg></button></div>
+      <h2><a class="story-link" target="_blank" rel="noopener noreferrer"></a></h2>
+      <p class="story-summary"></p>
+      <div class="story-tags"></div>
+      <div class="story-controls"><button class="why-button text-button" aria-expanded="false">Why this matters <span aria-hidden="true">⌄</span></button><div><button class="reports-button text-button" aria-expanded="false"></button><button class="hide-story icon-button" aria-label="Hide story" title="Hide story"><svg><use href="#i-close"/></svg></button></div></div>
+      <div class="why-panel" hidden></div><div class="reports-panel" hidden></div>
+    </article>
+  </template>
+</body>
+</html>

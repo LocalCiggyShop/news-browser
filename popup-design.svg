@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="580" viewBox="0 0 440 580" role="img" aria-labelledby="title desc">
+  <title id="title">News Browser popup design</title>
+  <desc id="desc">Illustrative news popup with a location selector, Top Latest Local World navigation, trending topics and two story cards. All headlines and report counts are fictional examples.</desc>
+  <defs>
+    <style>
+      text { font-family: Inter, Arial, sans-serif; fill: #1c2928; }
+      .muted { fill: #586563; }
+      .accent { fill: #12665a; }
+      .small { font-size: 12px; }
+      .body { font-size: 14px; }
+      .headline { font-size: 18px; font-weight: 600; }
+      .line { stroke: #dae1dc; fill: none; }
+    </style>
+  </defs>
+  <rect width="440" height="580" rx="14" fill="#f5f6f1"/>
+  <rect x="20" y="22" width="30" height="30" rx="8" fill="#12665a"/>
+  <path d="M28 30h14M28 36h14M28 42h9" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+  <text x="60" y="38" font-size="21" font-weight="700">News Browser</text>
+  <text x="60" y="56" class="small muted">A moment to get informed.</text>
+  <g aria-label="Saved stories">
+    <rect x="340" y="18" width="36" height="38" rx="8" fill="#fff" stroke="#dae1dc"/>
+    <path d="M352 28h12v17l-6-4-6 4z" fill="none" stroke="#425651" stroke-width="1.5"/>
+  </g>
+  <g aria-label="Settings">
+    <rect x="384" y="18" width="36" height="38" rx="8" fill="#fff" stroke="#dae1dc"/>
+    <path d="M392 31h20m-20 9h20" stroke="#425651" stroke-width="1.5"/>
+    <circle cx="398" cy="31" r="3" fill="#fff" stroke="#425651" stroke-width="1.5"/>
+    <circle cx="407" cy="40" r="3" fill="#fff" stroke="#425651" stroke-width="1.5"/>
+  </g>
+  <text x="20" y="88" class="body accent" font-weight="600">Your region</text>
+  <path d="m108 82 4 4 4-4" stroke="#12665a" fill="none" stroke-width="1.5"/>
+  <circle cx="313" cy="83" r="3" fill="#12665a"/>
+  <text x="323" y="88" class="small muted">Checked just now</text>
+  <rect x="20" y="106" width="400" height="40" rx="9" fill="#e8ede6"/>
+  <rect x="23" y="109" width="95" height="34" rx="7" fill="#12665a"/>
+  <text x="70" y="131" font-size="14" text-anchor="middle" style="fill:#fff;font-weight:600">Top</text>
+  <text x="170" y="131" class="body" text-anchor="middle">Latest</text>
+  <text x="270" y="131" class="body" text-anchor="middle">Local</text>
+  <text x="370" y="131" class="body" text-anchor="middle">World</text>
+  <text x="20" y="169" class="small muted">TRENDING IN SELECTED FEEDS</text>
+  <rect x="20" y="178" width="111" height="27" rx="13" fill="#e4eee9"/>
+  <text x="75" y="196" class="small accent" text-anchor="middle">Cost of living</text>
+  <rect x="139" y="178" width="79" height="27" rx="13" fill="#e4eee9"/>
+  <text x="178" y="196" class="small accent" text-anchor="middle">Climate</text>
+  <rect x="226" y="178" width="99" height="27" rx="13" fill="#e4eee9"/>
+  <text x="275" y="196" class="small accent" text-anchor="middle">Technology</text>
+  <rect x="20" y="220" width="400" height="155" rx="12" fill="#fff" stroke="#dae1dc"/>
+  <text x="36" y="243" class="small muted">Example Local News · 12 min ago</text>
+  <path d="M389 234h12v16l-6-4-6 4z" fill="none" stroke="#586563" stroke-width="1.5"/>
+  <text x="36" y="271" class="headline">New rail timetable changes</text>
+  <text x="36" y="295" class="headline">the daily commute for thousands</text>
+  <rect x="36" y="308" width="92" height="23" rx="5" fill="#e4eee9"/>
+  <text x="82" y="324" class="small accent" text-anchor="middle">High impact</text>
+  <rect x="136" y="308" width="78" height="23" rx="5" fill="#edf0ea"/>
+  <text x="175" y="324" class="small" text-anchor="middle">Near you</text>
+  <text x="36" y="356" font-size="13" class="accent">Why this matters</text>
+  <path d="m145 349 4 4 4-4" stroke="#12665a" fill="none" stroke-width="1.5"/>
+  <text x="321" y="356" font-size="13" class="accent">4 reports →</text>
+  <rect x="20" y="387" width="400" height="128" rx="12" fill="#fff" stroke="#dae1dc"/>
+  <text x="36" y="410" class="small muted">Example World News · 28 min ago</text>
+  <path d="M389 401h12v16l-6-4-6 4z" fill="none" stroke="#586563" stroke-width="1.5"/>
+  <text x="36" y="438" class="headline">Pacific nations expand shared</text>
+  <text x="36" y="462" class="headline">coastal protection programme</text>
+  <text x="36" y="494" font-size="13" class="accent">Why this matters</text>
+  <path d="m145 487 4 4 4-4" stroke="#12665a" fill="none" stroke-width="1.5"/>
+  <text x="321" y="494" font-size="13" class="accent">6 reports →</text>
+  <path d="M20 531h400" class="line"/>
+  <text x="20" y="553" class="small muted">Illustrative headlines · preview only</text>
+  <text x="343" y="553" font-size="13" class="accent">Expand ↗</text>
+</svg>
