@@ -8,7 +8,7 @@ Illustrative local brief. Country, city and sources are chosen during setup; the
 
 ## Install in Chrome or Brave
 
-The browser packages are already built in `dist/`.
+Use a browser package from [GitHub Releases](https://github.com/LocalCiggyShop/news-browser/releases) when available. For a source checkout, run `python3 scripts/build.py` from the repository folder to create `dist/`; this build step needs Python 3 only, with no npm installation. In the original development workspace, the packages are already built.
 
 1. Open `chrome://extensions` in Chrome, or `brave://extensions` in Brave.
 2. Turn on **Developer mode**.
